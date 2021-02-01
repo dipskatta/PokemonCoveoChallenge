@@ -8,3 +8,4 @@ C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Html
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.exe
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
