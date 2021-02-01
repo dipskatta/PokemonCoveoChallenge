@@ -1,0 +1,10 @@
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CoreCompileInputs.cache
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe.config
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.exe
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
