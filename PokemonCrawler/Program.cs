@@ -72,7 +72,6 @@ namespace PokemonCrawler
                 PushToSource(pokemons);
 
             }
-            Console.WriteLine("Total...."+pokemons.Count);
             Console.WriteLine("Successful....");
             Console.WriteLine("Press Enter to exit the program...");
             ConsoleKeyInfo keyinfor = Console.ReadKey(true);
