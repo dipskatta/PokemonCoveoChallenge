@@ -30,13 +30,15 @@ namespace PokemonCrawler
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
 
-            var pokemons = new List<PushDocument>();
+            
             var pokemonByGen =
             htmlDocument.DocumentNode.Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "").Equals("infocard-list infocard-list-pkmn-lg")).ToList();
 
             for (int i = 0; i < pokemonByGen.Count; i++)
             {
+                var pokemons = new List<PushDocument>();
+
                 var allPokemonsInSpecificGen = pokemonByGen[i].Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("infocard ")).ToList();
 
                 foreach (var pokemonInGen in allPokemonsInSpecificGen)
