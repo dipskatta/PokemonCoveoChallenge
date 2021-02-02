@@ -8,3 +8,28 @@ C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Html
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.exe
 C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.exe.config
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.exe
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.pdb
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Contracts.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Extensions.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Logging.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.PlatformSdk.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.RestClient.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\DotNetZip.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\log4net.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\log4net.Ext.Json.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Newtonsoft.Json.dll
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.PlatformSdk.xml
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\DotNetZip.pdb
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\DotNetZip.xml
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\HtmlAgilityPack.pdb
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\log4net.xml
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Newtonsoft.Json.xml
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CoreCompileInputs.cache
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.exe
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.pdb

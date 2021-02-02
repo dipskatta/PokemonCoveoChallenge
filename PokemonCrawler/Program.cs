@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Net.Http;
+using Coveo.Connectors.Utilities.PlatformSdk;
+using Coveo.Connectors.Utilities.PlatformSdk.Config;
+using Coveo.Connectors.Utilities.PlatformSdk.Model.Document;
+using Newtonsoft.Json.Linq;
 using PokemonCrawler.Models;
 
 namespace PokemonCrawler
@@ -26,7 +30,7 @@ namespace PokemonCrawler
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
 
-            var pokemons = new List<PokeDexItem>();
+            var pokemons = new List<PushDocument>();
             var pokemonByGen =
             htmlDocument.DocumentNode.Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "").Equals("infocard-list infocard-list-pkmn-lg")).ToList();
@@ -46,10 +50,24 @@ namespace PokemonCrawler
                         Types = pokemonInGen.Descendants("a").Where(node => node.GetAttributeValue("class", "").Contains("itype")).Select(s => s.InnerText).ToList(),
 
                     };
-                    pokemons.Add(pokemon);
+
+                    var documentToAdd = new PushDocument(pokemon.UrlToStats)
+                    {
+                        ClickableUri = pokemon.UrlToStats,
+                        ModifiedDate = DateTime.UtcNow,
+                        Metadata =
+                        {
+                            new KeyValuePair<string, JToken>("charactername",pokemon.CharacterName), 
+                            new KeyValuePair<string, JToken>("ImageUrl",pokemon.ImageUrl), 
+                            new KeyValuePair<string, JToken>("Generation",pokemon.Generation), 
+                            new KeyValuePair<string, JToken>("UrlToStats",pokemon.UrlToStats), 
+                            new KeyValuePair<string, JToken>("Types",string.Join(";",pokemon.Types)) 
+                        }
+                    };
+                    pokemons.Add(documentToAdd);
                 }
 
-
+                PushToSource(pokemons);
 
             }
             Console.WriteLine("Total...."+pokemons.Count);
@@ -63,7 +81,15 @@ namespace PokemonCrawler
 
         }
 
-
+        private static void PushToSource(List<PushDocument> documents)
+        {
+            string apiKey = "xxf658e848-24d4-4424-8830-edb1b82637da";
+            string organizationId = "coveopokemonchallengepcm0rz3k";
+            string sourceId = "coveopokemonchallengepcm0rz3k-steno3qxuvfyenkroqzvxikot4";
+            ICoveoPlatformConfig config = new CoveoPlatformConfig(apiKey, organizationId);
+            ICoveoPlatformClient client = new CoveoPlatformClient(config);
+            client.DocumentManager.AddOrUpdateDocuments(sourceId, documents, null);
+        }
     }
 }
 
