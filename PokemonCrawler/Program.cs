@@ -87,6 +87,9 @@ namespace PokemonCrawler
             string apiKey = "xxf658e848-24d4-4424-8830-edb1b82637da";
             string organizationId = "coveopokemonchallengepcm0rz3k";
             string sourceId = "coveopokemonchallengepcm0rz3k-steno3qxuvfyenkroqzvxikot4";
+            //string apiKey = "xxfe408680-a663-41f1-a351-e5ec3e8d09ba";
+            //string organizationId = "coveopokemonchallengepcm0rz3k";
+            //string sourceId = "coveopokemonchallengepcm0rz3k-vs73qz3k5fu432ktvy7a65knxm";
             ICoveoPlatformConfig config = new CoveoPlatformConfig(apiKey, organizationId);
             ICoveoPlatformClient client = new CoveoPlatformClient(config);
             client.DocumentManager.AddOrUpdateDocuments(sourceId, documents, null);

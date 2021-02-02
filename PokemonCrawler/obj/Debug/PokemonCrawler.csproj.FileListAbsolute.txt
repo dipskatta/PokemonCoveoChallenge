@@ -28,8 +28,8 @@ C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\HtmlAgilityPack.xml
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\log4net.xml
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\Newtonsoft.Json.xml
-C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CoreCompileInputs.cache
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.exe
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
+C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
