@@ -61,7 +61,7 @@ namespace PokemonCrawler
                         {
                             new KeyValuePair<string, JToken>("charactername",pokemon.CharacterName), 
                             new KeyValuePair<string, JToken>("ImageUrl",pokemon.ImageUrl), 
-                            new KeyValuePair<string, JToken>("Generation",pokemon.Generation), 
+                            new KeyValuePair<string, JToken>("generationstring",pokemon.Generation), 
                             new KeyValuePair<string, JToken>("UrlToStats",pokemon.UrlToStats), 
                             new KeyValuePair<string, JToken>("Types",string.Join(";",pokemon.Types)) 
                         }
