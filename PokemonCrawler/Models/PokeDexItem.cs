@@ -18,5 +18,6 @@ namespace PokemonCrawler.Models
         public int Number { get; set; }
         public string description { get; set; }
         public List<string> Types { get; set; }
+        public string Parent { get; set; }
     }
 }

@@ -57,8 +57,17 @@ namespace PokemonCrawler
                         Types = pokemonInGen.Descendants("a").Where(node => node.GetAttributeValue("class", "").Contains("itype")).Select(s => s.InnerText).ToList(),
                         Weight = decimal.Parse(pokedexDataTable[4].InnerText.Replace("&nbsp;"," ").Split(' ')[0]),
                         description = RemoveHtmlTags(description),
-                        Number = Int32.Parse(pokedexDataTable[0].InnerText)
+                        Number = Int32.Parse(pokedexDataTable[0].InnerText),                       
                     };
+
+                    //Check if Evolution has any data if yes, load the parent 
+                    var evolutionDiv = pokemonDetailsHtmlDocument.DocumentNode.Descendants("div").FirstOrDefault(node =>
+                        node.GetAttributeValue("class", "").Equals("infocard-list-evo"));
+                    if(evolutionDiv != null)
+                    {
+                        pokemon.Parent = evolutionDiv.Descendants("a").FirstOrDefault(node =>
+                        node.GetAttributeValue("class", "").Equals("ent-name")).InnerText;                       
+                    }
 
                     var documentToAdd = new PushDocument(pokemon.UrlToStats)
                     {
@@ -73,13 +82,28 @@ namespace PokemonCrawler
                             new KeyValuePair<string, JToken>("Types",string.Join(";",pokemon.Types)), 
                             new KeyValuePair<string, JToken>("description", pokemon.description), 
                             new KeyValuePair<string, JToken>("pokemonnumber", pokemon.Number), 
-                            new KeyValuePair<string, JToken>("pokemonweight", pokemon.Weight) 
+                            new KeyValuePair<string, JToken>("pokemonweight", pokemon.Weight),                           
+
                         }
                     };
+                    //add folding fields if evolition is present
+                    if (!string.IsNullOrWhiteSpace(pokemon.Parent))
+                    {
+                        var foldingChild = new KeyValuePair<string, JToken>("foldingchild", pokemon.CharacterName);
+                        documentToAdd.Metadata.Add(foldingChild);
+
+                        var foldingParent = new KeyValuePair<string, JToken>("foldingparent", pokemon.Parent);
+                        documentToAdd.Metadata.Add(foldingParent);
+
+                        var foldingCollection = new KeyValuePair<string, JToken>("foldingcollection", pokemon.Parent);
+                        documentToAdd.Metadata.Add(foldingCollection);
+
+                    }
+
                     pokemons.Add(documentToAdd);
                 }
 
-                PushToSource(pokemons);
+               PushToSource(pokemons);
 
             }
             Console.WriteLine("Successful....");

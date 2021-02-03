@@ -48,9 +48,6 @@
     <Reference Include="Coveo.Connectors.Utilities.RestClient, Version=8.0.5686.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Coveo.Connectors.Utilities.PlatformSdk.1.7.0\lib\netstandard2.0\Coveo.Connectors.Utilities.RestClient.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.30.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.30\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>

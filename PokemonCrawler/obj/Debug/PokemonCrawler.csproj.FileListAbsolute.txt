@@ -1,13 +1,3 @@
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CoreCompileInputs.cache
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe.config
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.pdb
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.dll
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.xml
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.exe
-C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.exe.config
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.exe
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\bin\Debug\PokemonCrawler.pdb
@@ -33,3 +23,25 @@ C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.exe
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
 C:\projects\Custom\Coveo Pokemon Challenge\PokemonCoveoChallenge\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe.config
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.exe
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\PokemonCrawler.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Contracts.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Extensions.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.Logging.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.PlatformSdk.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.RestClient.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\log4net.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\log4net.Ext.Json.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Coveo.Connectors.Utilities.PlatformSdk.xml
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\log4net.xml
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CoreCompileInputs.cache
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csproj.CopyComplete
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.exe
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.pdb
+C:\Users\deepthi.katta\source\repos\PokemonCrawler\PokemonCrawler\obj\Debug\PokemonCrawler.csprojAssemblyReference.cache
