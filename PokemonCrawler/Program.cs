@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using Coveo.Connectors.Utilities.PlatformSdk;
 using Coveo.Connectors.Utilities.PlatformSdk.Config;
 using Coveo.Connectors.Utilities.PlatformSdk.Model.Document;
@@ -23,14 +24,8 @@ namespace PokemonCrawler
         private static async Task startPokemonCrawler()
         {
 
-            //the url of the page we want to test
-            var url = "https://pokemondb.net/pokedex/national";
-            var httpClient = new HttpClient();
-            var html = await httpClient.GetStringAsync(url);
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(html);
+            var htmlDocument = CreateCrawler("https://pokemondb.net/pokedex/national").Result;
 
-            
             var pokemonByGen =
             htmlDocument.DocumentNode.Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "").Equals("infocard-list infocard-list-pkmn-lg")).ToList();
@@ -43,14 +38,26 @@ namespace PokemonCrawler
 
                 foreach (var pokemonInGen in allPokemonsInSpecificGen)
                 {
+                    var pokemonUrl =
+                        $"https://pokemondb.net/{pokemonInGen.Descendants("a").FirstOrDefault(node => node.GetAttributeValue("class", "").Equals("ent-name")).ChildAttributes("href").FirstOrDefault().Value}";
+
+                    var pokemonDetailsHtmlDocument = CreateCrawler(pokemonUrl).Result;
+                    var description = pokemonDetailsHtmlDocument.DocumentNode.Descendants("div").FirstOrDefault(node =>
+                        node.GetAttributeValue("class", "").Equals("grid-col span-md-6 span-lg-8")).InnerHtml;
+                    var details = pokemonDetailsHtmlDocument.DocumentNode.Descendants("table").Where(node =>
+                        node.GetAttributeValue("class", "").Equals("vitals-table")).ToList();
+                    var pokedexDataTable = details.FirstOrDefault().Descendants("td").ToList();
+
                     var pokemon = new PokeDexItem()
                     {
                         CharacterName = pokemonInGen.Descendants("a").FirstOrDefault(node => node.GetAttributeValue("class", "").Equals("ent-name")).InnerText,
                         ImageUrl = pokemonInGen.Descendants("span").FirstOrDefault(node => node.GetAttributeValue("class", "").Contains("img-fixed img-sprite")).ChildAttributes("data-src").FirstOrDefault().Value,
                         Generation = $"Generation {i + 1}",
-                        UrlToStats = $"https://pokemondb.net/{pokemonInGen.Descendants("a").FirstOrDefault(node => node.GetAttributeValue("class", "").Equals("ent-name")).ChildAttributes("href").FirstOrDefault().Value}",
+                        UrlToStats = pokemonUrl,
                         Types = pokemonInGen.Descendants("a").Where(node => node.GetAttributeValue("class", "").Contains("itype")).Select(s => s.InnerText).ToList(),
-
+                        Weight = decimal.Parse(pokedexDataTable[4].InnerText.Replace("&nbsp;"," ").Split(' ')[0]),
+                        description = RemoveHtmlTags(description),
+                        Number = Int32.Parse(pokedexDataTable[0].InnerText)
                     };
 
                     var documentToAdd = new PushDocument(pokemon.UrlToStats)
@@ -63,7 +70,10 @@ namespace PokemonCrawler
                             new KeyValuePair<string, JToken>("ImageUrl",pokemon.ImageUrl), 
                             new KeyValuePair<string, JToken>("generationstring",pokemon.Generation), 
                             new KeyValuePair<string, JToken>("UrlToStats",pokemon.UrlToStats), 
-                            new KeyValuePair<string, JToken>("Types",string.Join(";",pokemon.Types)) 
+                            new KeyValuePair<string, JToken>("Types",string.Join(";",pokemon.Types)), 
+                            new KeyValuePair<string, JToken>("description", pokemon.description), 
+                            new KeyValuePair<string, JToken>("pokemonnumber", pokemon.Number), 
+                            new KeyValuePair<string, JToken>("pokemonweight", pokemon.Weight) 
                         }
                     };
                     pokemons.Add(documentToAdd);
@@ -93,6 +103,20 @@ namespace PokemonCrawler
             ICoveoPlatformConfig config = new CoveoPlatformConfig(apiKey, organizationId);
             ICoveoPlatformClient client = new CoveoPlatformClient(config);
             client.DocumentManager.AddOrUpdateDocuments(sourceId, documents, null);
+        }
+
+        private static async Task<HtmlDocument> CreateCrawler(string url)
+        {
+            var httpClient = new HttpClient();
+            var html = await httpClient.GetStringAsync(url);
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(html);
+            return htmlDocument;
+        }
+
+        private static string RemoveHtmlTags(string text)
+        {
+            return Regex.Replace(text, @"<[^>]*>", string.Empty);
         }
     }
 }
