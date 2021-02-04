@@ -18,10 +18,10 @@ namespace PokemonCrawler
     {
         static void Main(string[] args)
         {
-            startPokemonCrawler();
+            StartPokemonCrawler();
             Console.ReadLine();
         }
-        private static async Task startPokemonCrawler()
+        private static void StartPokemonCrawler()
         {
 
             var htmlDocument = CreateCrawler("https://pokemondb.net/pokedex/national").Result;
@@ -29,7 +29,9 @@ namespace PokemonCrawler
             var pokemonByGen =
             htmlDocument.DocumentNode.Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "").Equals("infocard-list infocard-list-pkmn-lg")).ToList();
-
+            
+            Console.WriteLine($"{pokemonByGen.Count} generations of pokemons to add");
+            
             for (int i = 0; i < pokemonByGen.Count; i++)
             {
                 var pokemons = new List<PushDocument>();
@@ -48,6 +50,8 @@ namespace PokemonCrawler
                         node.GetAttributeValue("class", "").Equals("vitals-table")).ToList();
                     var pokedexDataTable = details.FirstOrDefault().Descendants("td").ToList();
 
+                    var breedingTable = details[2].Descendants("td").ToList();
+                    var genderArray = breedingTable[1].InnerText.Split(',');
                     var pokemon = new PokeDexItem()
                     {
                         CharacterName = pokemonInGen.Descendants("a").FirstOrDefault(node => node.GetAttributeValue("class", "").Equals("ent-name")).InnerText,
@@ -55,9 +59,11 @@ namespace PokemonCrawler
                         Generation = $"Generation {i + 1}",
                         UrlToStats = pokemonUrl,
                         Types = pokemonInGen.Descendants("a").Where(node => node.GetAttributeValue("class", "").Contains("itype")).Select(s => s.InnerText).ToList(),
-                        Weight = decimal.Parse(pokedexDataTable[4].InnerText.Replace("&nbsp;"," ").Split(' ')[0]),
+                        Weight = decimal.Parse(GetFirstSectionInString(pokedexDataTable[4].InnerText)),
                         description = RemoveHtmlTags(description),
-                        Number = Int32.Parse(pokedexDataTable[0].InnerText),                       
+                        Number = Int32.Parse(pokedexDataTable[0].InnerText),
+                        Male = genderArray.Length==1?0:decimal.Parse(GetFirstSectionInString(genderArray.First())),
+                        Female = genderArray.Length == 1 ? 0:decimal.Parse(GetFirstSectionInString(genderArray.Last().Trim()))
                     };
 
                     //Check if Evolution has any data if yes, load the parent 
@@ -83,6 +89,8 @@ namespace PokemonCrawler
                             new KeyValuePair<string, JToken>("description", pokemon.description), 
                             new KeyValuePair<string, JToken>("pokemonnumber", pokemon.Number), 
                             new KeyValuePair<string, JToken>("pokemonweight", pokemon.Weight),                           
+                            new KeyValuePair<string, JToken>("male", pokemon.Male),                           
+                            new KeyValuePair<string, JToken>("female", pokemon.Female),                           
 
                         }
                     };
@@ -104,7 +112,7 @@ namespace PokemonCrawler
                 }
 
                PushToSource(pokemons);
-
+               Console.WriteLine($"generation {i} added...");
             }
             Console.WriteLine("Successful....");
             Console.WriteLine("Press Enter to exit the program...");
@@ -141,6 +149,11 @@ namespace PokemonCrawler
         private static string RemoveHtmlTags(string text)
         {
             return Regex.Replace(text, @"<[^>]*>", string.Empty);
+        }
+
+        private static string GetFirstSectionInString(string text)
+        {
+            return text.Replace("&nbsp;", " ").Split(' ')[0].Replace("%", string.Empty);
         }
     }
 }

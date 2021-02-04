@@ -19,5 +19,7 @@ namespace PokemonCrawler.Models
         public string description { get; set; }
         public List<string> Types { get; set; }
         public string Parent { get; set; }
+        public decimal Male { get; set; }
+        public decimal Female { get; set; }
     }
 }
